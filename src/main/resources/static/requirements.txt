@@ -1,0 +1,44 @@
+Points table
+
+Points table in DB
+Matches
+
+
+3 API for pPints
+1. POST API -> match result  — points table
+2. View points table in order
+3.  Dummy matches 5
+Last 3 matches played by team
+Opponent, result, date
+
+{
+	“team1” : {
+			“id”: “332”,
+			“name”: “KKR”
+        },
+	“team2” : {
+			“id”: “165”,
+			“name”: “CSK”
+        },
+	“result”: “0-1”,
+	“matchDate”: 2024-04-05,
+	“nrrDelta”: “0.52”
+}
+
+Schema
+Match : Date, TeamId1, TeamId2, WinTeamId, NRRDelta
+Team: Id, Name, P, W, NRR
+
+Endpoints v1/
+1. POST: /point
+2. GET: /point
+3. GET /match/lastN?n=3&id=16
+
+will input be valid?
+
+SQL Query
+1. update table team set p=p+1 and w = (case logic) and nrr = (case logic) where id = {param}
+2. select * from team order by w, nrr desc
+3. select * from match where id={} order by date desc limit n;
+
+
