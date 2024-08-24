@@ -32,5 +32,6 @@ public class PointService {
             team2.setNrr(team1.getNrr()- match.getNrr());
         }
         teamRepository.saveAllAndFlush(List.of(team1, team2));
+        //check
     }
 }
